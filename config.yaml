@@ -1,0 +1,211 @@
+---
+"Data-driven classification of health status of older adults with diabetes: The diabetes and aging study":
+  classes:
+    - Healthy
+    - Geriatric
+    - Cardiac
+  covariates:
+    Arthritis:
+      intercepts:
+        - 0.3
+        - 0.4
+        - 0.5
+      coefficients:
+        - -0.34
+        - -0.45
+        - 0.56
+    Atrial Fibrillation:
+      intercepts:
+        - 0.13
+        - 0.41
+        - 0.15
+      coefficients:
+        - 0.34
+        - -0.55
+        - -0.56
+    Cancer:
+      intercepts:
+        - -0.13
+        - 0.41
+        - 0.15
+      coefficients:
+        - 0.24
+        - -0.7
+        - 0.56
+    Congestive Heart Failure:
+      intercepts:
+        - 0.23
+        - -0.41
+        - 0.35
+      coefficients:
+        - 0.14
+        - -0.25
+        - -0.6
+    Coronary Artery Disease:
+      intercepts:
+        - -0.3
+        - 0.241
+        - -0.15
+      coefficients:
+        - 0.14
+        - 0.55
+        - -0.26
+    Dementia:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Depression:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Emphysema/ Chronic Obstructive Pulmonary Disease (COPD):
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    End-Stage Renal Disease (ESRD):
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Falls:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Foot ulcer:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Hypertension:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Liver Disease:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Lower Extremity Amputation:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Obesity:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Peripheral Vascular Disease:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Stroke:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Thyroid Disease:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+    Urinary Incontinence:
+      intercepts:
+        - -0.6
+        - 0.41
+        - -0.15
+      coefficients:
+        - -0.34
+        - -0.15
+        - 0.6
+  outcome_probabilities:
+    Microvascular complications:
+      - 0.9
+      - 0.15
+      - 0.35
+    Cardiovascular complications:
+      - 0.2
+      - 0.8
+      - 0.15
+    Infection:
+      - 0.25
+      - 0.8
+      - 0.25
+    Hypoglycemia:
+      - 0.93
+      - 0.33
+      - 0.33
+    Hyperglycemia:
+      - 0.1
+      - 0.9
+      - 0.1
+    Mortality:
+      - 0.9
+      - 0.2
+      - 0.8
+    Combined non-mortality:
+      - 0.8
+      - 0.3
+      - 0.1
+    Combined outcome:
+      - 0.9
+      - 0.25
+      - 0.05

@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+*.ipynb
+__pycache__/
+.ipynb_checkpoints
+lca_calculator.egg-info
+/build
+/dist
+**/*.db
+*.csv
