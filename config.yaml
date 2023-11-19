@@ -1,84 +1,85 @@
 ---
 "Data-driven classification of health status of older adults with diabetes: The diabetes and aging study":
+  covariate_label: "Comorbidities"
   class_intercepts:
-    Healthy: 0.3
+    Healthy: 0
     Geriatric: 0.4
     Cardiac: 0.5
   covariate_coefficients:
     Arthritis:
-      - -0.34
+      - 0
       - -0.45
       - 0.56
     Atrial Fibrillation:
-      - 0.34
+      - 0
       - -0.55
       - -0.56
     Cancer:
-      - 0.24
+      - 0
       - -0.7
       - 0.56
     Congestive Heart Failure:
-      - 0.14
+      - 0
       - -0.25
       - -0.6
     Coronary Artery Disease:
-      - 0.14
+      - 0
       - 0.55
       - -0.26
     Dementia:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Depression:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Emphysema/ Chronic Obstructive Pulmonary Disease (COPD):
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     End-Stage Renal Disease (ESRD):
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Falls:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Foot ulcer:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Hypertension:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Liver Disease:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Lower Extremity Amputation:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Obesity:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Peripheral Vascular Disease:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Stroke:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Thyroid Disease:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
     Urinary Incontinence:
-      - -0.34
+      - 0
       - -0.15
       - 0.6
   outcome_probabilities:
