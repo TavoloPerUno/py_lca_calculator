@@ -10,8 +10,9 @@ dct_config = yaml.safe_load(open("config.yaml", "r"))
 study_name = next(iter(dct_config))
 dct_study_config = next(iter(dct_config.values()))
 
+st.set_page_config(page_title=study_name, )
 st.title(study_name)
-
+st.divider()
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
@@ -65,12 +66,12 @@ with st.container():
                 covariate, ["Yes", "No", "Unknown"], index=None
             )
 
-
 with st.container():
     if all(
         bool(dct_selected_covariates[covariate])
         for covariate in dct_selected_covariates
     ):
+        st.divider()
         selected_covariates = [
             covariate
             for covariate in dct_selected_covariates
@@ -100,7 +101,8 @@ with st.container():
             )
             st.markdown(
                 f"""
-            Predicted latent class {pdf_predicted_class['']['Latent Classes']} with 
+            Predicted latent class 
+            is {pdf_predicted_class['']['Latent Classes']} with 
             outcome probabilities \n{outcome_probabilities}
             """
             )
@@ -116,13 +118,14 @@ with st.container():
                         xaxis=None,
                         ylabel="Class probabilities",
                         title="Predicted class probabilities",
+                        sizing_mode='scale_both'
                     )
                     .opts(default_tools=["save"]),
                     backend="bokeh",
                 )
             )
 
-
+st.divider()
 pdf_outcome_probabilities = pdf_study_config.set_index(("", "Latent Classes"))[
     "Outcome Probabilities"
 ]
@@ -136,6 +139,7 @@ st.write(
             rot=90,
             xlabel="Latent Classes, Outcome",
             title="Probability of outcome, given latent class",
+            sizing_mode='scale_both'
         ).opts(default_tools=["save"]),
         backend="bokeh",
     )
