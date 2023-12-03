@@ -10,7 +10,9 @@ dct_config = yaml.safe_load(open("config.yaml", "r"))
 study_name = next(iter(dct_config))
 dct_study_config = next(iter(dct_config.values()))
 
-st.set_page_config(page_title=study_name, )
+st.set_page_config(
+    page_title=study_name,
+)
 st.title(study_name)
 st.divider()
 with open("style.css") as f:
@@ -107,7 +109,7 @@ with st.container():
             """
             )
         with col2:
-            st.write(
+            st.bokeh_chart(
                 hv.render(
                     pdf_class_probabilities.set_index("Latent " "Classes")
                     .T.hvplot.bar(
@@ -118,7 +120,7 @@ with st.container():
                         xaxis=None,
                         ylabel="Class probabilities",
                         title="Predicted class probabilities",
-                        sizing_mode='scale_both'
+                        sizing_mode="scale_both",
                     )
                     .opts(default_tools=["save"]),
                     backend="bokeh",
@@ -131,15 +133,15 @@ pdf_outcome_probabilities = pdf_study_config.set_index(("", "Latent Classes"))[
 ]
 pdf_outcome_probabilities.index.name = "Latent Classes"
 
-st.write(
+st.bokeh_chart(
     hv.render(
         pdf_outcome_probabilities.hvplot.barh(
             responsive=True,
             height=500,
-            rot=90,
+            ylabel="Probability",
             xlabel="Latent Classes, Outcome",
             title="Probability of outcome, given latent class",
-            sizing_mode='scale_both'
+            sizing_mode="scale_both",
         ).opts(default_tools=["save"]),
         backend="bokeh",
     )
