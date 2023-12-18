@@ -19,15 +19,17 @@ with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
-def load_data():
+def get_weights_and_probabilities():
     pdf_coeff = pd.DataFrame(dct_study_config["covariate_coefficients"])
     pdf_intercept = (
         pd.DataFrame(dct_study_config["class_intercepts"], index=[0])
         .T.reset_index()
         .rename(columns={0: "Intercepts", "index": "Latent Classes"})
     )
+
     pdf_probabilities = pd.DataFrame(dct_study_config["outcome_probabilities"])
-    pdf_config = pd.concat(
+
+    pdf_weights_and_probabilities = pd.concat(
         {
             "": pdf_intercept["Latent Classes"],
             "Beta Estimates": pd.concat(
@@ -37,11 +39,20 @@ def load_data():
         },
         axis=1,
     )
-    return pdf_config
+    return pdf_weights_and_probabilities
 
 
-def get_class_and_outcome_probabilities(selected_covariates):
+def compute_class_probabilities(selected_covariates):
+    """
+    This function will calculate class probabilities for K classes using the
+    below formula:
+
+    .. math::
+        \Pr (C_i = k \,|\, x_i_1,..x_i_n) = \frac{e^{\beta _0_k + \sum_{j=0}^{n}\beta_j_k x_i_j }}{\sum_{l=1}^{K}e^{\beta _0_l + \sum_{j=0}^{n}\beta_j_l x_i_j }}
+
+    """
     pdf_coefficients = pdf_study_config["Beta Estimates"]
+
     pdf_coefficients = pdf_coefficients.assign(
         log_odds=pdf_coefficients[["Intercepts"] + selected_covariates].sum(axis=1)
     )
@@ -53,7 +64,7 @@ def get_class_and_outcome_probabilities(selected_covariates):
     return pdf_coefficients
 
 
-pdf_study_config = load_data()
+pdf_study_config = get_weights_and_probabilities()
 dct_selected_covariates = {}
 with st.container():
     st.write(f"Select applicable {dct_study_config['covariate_label']}")
@@ -79,7 +90,7 @@ with st.container():
             for covariate in dct_selected_covariates
             if dct_selected_covariates[covariate] == "Yes"
         ]
-        pdf_class_probabilities = get_class_and_outcome_probabilities(
+        pdf_class_probabilities = compute_class_probabilities(
             selected_covariates
         )
         pdf_class_probabilities = pdf_study_config[""].merge(
@@ -137,7 +148,7 @@ st.bokeh_chart(
     hv.render(
         pdf_outcome_probabilities.hvplot.barh(
             responsive=True,
-            height=500,
+            height=800,
             ylabel="Probability",
             xlabel="Latent Classes, Outcome",
             title="Probability of outcome, given latent class",

@@ -83,35 +83,79 @@
       - -0.15
       - 0.6
   outcome_probabilities:
-    Microvascular complications:
-      - 0.9
-      - 0.15
-      - 0.35
-    Cardiovascular complications:
-      - 0.2
-      - 0.8
-      - 0.15
-    Infection:
-      - 0.25
-      - 0.8
-      - 0.25
-    Hypoglycemia:
-      - 0.93
-      - 0.33
-      - 0.33
-    Hyperglycemia:
-      - 0.1
-      - 0.9
-      - 0.1
-    Mortality:
-      - 0.9
-      - 0.2
-      - 0.8
-    Combined non-mortality:
-      - 0.8
-      - 0.3
-      - 0.1
-    Combined outcome:
-      - 0.9
-      - 0.25
+    Hypertension:
+      - 0.87
+      - 0.95
+      - 0.97
+    Atrial fibrillation:
       - 0.05
+      - 0.07
+      - 0.50
+    Congestive heart failure:
+      - 0.02
+      - 0.06
+      - 0.59
+    Coronary artery disease:
+      - 0.07
+      - 0.09
+      - 0.59
+    Stroke:
+      - 0.01
+      - 0.04
+      - 0.15
+    Peripheral vascular disease:
+      - 0.06
+      - 0.18
+      - 0.51
+    Foot ulcer:
+      - 0.02
+      - 0.08
+      - 0.24
+    Lower extremity amputation:
+      - 0.0
+      - 0.0
+      - 0.04
+    End-stage renal disease:
+      - 0.01
+      - 0.01
+      - 0.08
+    Liver disease:
+      - 0.09
+      - 0.23
+      - 0.29
+    Emphysema/ COPD:
+      - 0.15
+      - 0.34
+      - 0.46
+    Obesity:
+      - 0.38
+      - 0.57
+      - 0.47
+    Arthritis:
+      - 0.31
+      - 0.71
+      - 0.52
+    Depression:
+      - 0.14
+      - 0.56
+      - 0.40
+    Dementia:
+      - 0.01
+      - 0.08
+      - 0.08
+    Falls:
+      - 0.09
+      - 0.37
+      - 0.38
+    Urinary incontinence:
+      - 0.04
+      - 0.28
+      - 0.15
+    Thyroid disease:
+      - 0.13
+      - 0.31
+      - 0.27
+    Cancer:
+      - 0.10
+      - 0.14
+      - 0.15
