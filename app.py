@@ -90,9 +90,7 @@ with st.container():
             for covariate in dct_selected_covariates
             if dct_selected_covariates[covariate] == "Yes"
         ]
-        pdf_class_probabilities = compute_class_probabilities(
-            selected_covariates
-        )
+        pdf_class_probabilities = compute_class_probabilities(selected_covariates)
         pdf_class_probabilities = pdf_study_config[""].merge(
             pdf_class_probabilities[["class_probabilities"]],
             left_index=True,
