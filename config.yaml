@@ -2,160 +2,117 @@
 "Data-driven classification of health status of older adults with diabetes: The diabetes and aging study":
   covariate_label: "Comorbidities"
   prior_probabilities:
-    Healthy: 0
-    Geriatric: 0.4
-    Cardiac: 0.5
+    Geriatric: 0.245700
+    Cardiac: 0.207815
+    Healthy: 0.546485
   covariate_class_probabilities:
     Arthritis:
-      - 0
-      - 0.45
-      - 0.56
+      - 0.706611
+      - 0.521505
+      - 0.316331
     Atrial Fibrillation:
-      - 0
-      - 0.55
-      - 0.56
+      - 0.081819
+      - 0.460744
+      - 0.052644
     Cancer:
-      - 0
-      - 0.7
-      - 0.56
+      - 0.143699
+      - 0.157462
+      - 0.100957
     Congestive Heart Failure:
-      - 0
-      - 0.25
-      - 0.6
+      - 0.057718
+      - 0.586147
+      - 0.021655
     Coronary Artery Disease:
-      - 0
-      - 0.55
-      - 0.26
+      - 0.092356
+      - 0.589463
+      - 0.066350
     Dementia:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.084226
+      - 0.080946
+      - 0.013429
     Depression:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.557480
+      - 0.401536
+      - 0.141095
     Emphysema/ Chronic Obstructive Pulmonary Disease (COPD):
-      - 0
-      - 0.15
-      - 0.6
+      - 0.342763
+      - 0.452362
+      - 0.152503
     End-Stage Renal Disease (ESRD):
-      - 0
-      - 0.15
-      - 0.6
+      - 0.005909
+      - 0.079319
+      - 0.005183
     Falls:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.372228
+      - 0.381898
+      - 0.094819
     Foot ulcer:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.075870
+      - 0.237123
+      - 0.022713
     Hypertension:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.945424
+      - 0.974017
+      - 0.871887
     Liver Disease:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.203490
+      - 0.280349
+      - 0.092211
     Lower Extremity Amputation:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.000001
+      - 0.049462
+      - 0.000028
     Obesity:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.565718
+      - 0.465493
+      - 0.376826
     Peripheral Vascular Disease:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.158396
+      - 0.482581
+      - 0.063966
     Stroke:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.039278
+      - 0.150482
+      - 0.014217
     Thyroid Disease:
-      - 0
-      - 0.15
-      - 0.6
+      - 0.307869
+      - 0.255904
+      - 0.134892
     Urinary Incontinence:
-      - 0
-      - 0.15
+      - 0.281645
+      - 0.149864
+      - 0.041583
+  outcome_rates:
+    Microvascular complications:
+      - 1.3
+      - 6.3
+      - 0.9
+    Cardiovascular complications:
+      - 2.2
+      - 6.5
+      - 1.6
+    Infection:
+      - 5.0
+      - 9.7
+      - 2.7
+    Hypoglycemia:
+      - 1.2
+      - 2.1
+      - 0.7
+    Hyperglycemia:
+      - 0.5
       - 0.6
-  outcome_probabilities:
-    Hypertension:
-      - 0.87
-      - 0.95
-      - 0.97
-    Atrial fibrillation:
-      - 0.05
-      - 0.07
-      - 0.50
-    Congestive heart failure:
-      - 0.02
-      - 0.06
-      - 0.59
-    Coronary artery disease:
-      - 0.07
-      - 0.09
-      - 0.59
-    Stroke:
-      - 0.01
-      - 0.04
-      - 0.15
-    Peripheral vascular disease:
-      - 0.06
-      - 0.18
-      - 0.51
-    Foot ulcer:
-      - 0.02
-      - 0.08
-      - 0.24
-    Lower extremity amputation:
-      - 0.0
-      - 0.0
-      - 0.04
-    End-stage renal disease:
-      - 0.01
-      - 0.01
-      - 0.08
-    Liver disease:
-      - 0.09
-      - 0.23
-      - 0.29
-    Emphysema/ COPD:
-      - 0.15
-      - 0.34
-      - 0.46
-    Obesity:
-      - 0.38
-      - 0.57
-      - 0.47
-    Arthritis:
-      - 0.31
-      - 0.71
-      - 0.52
-    Depression:
-      - 0.14
-      - 0.56
-      - 0.40
-    Dementia:
-      - 0.01
-      - 0.08
-      - 0.08
-    Falls:
-      - 0.09
-      - 0.37
-      - 0.38
-    Urinary incontinence:
-      - 0.04
-      - 0.28
-      - 0.15
-    Thyroid disease:
-      - 0.13
-      - 0.31
-      - 0.27
-    Cancer:
-      - 0.10
-      - 0.14
-      - 0.15
+      - 0.3
+    Mortality:
+      - 3.8
+      - 8.0
+      - 2.3
+    Combined non-mortality:
+      - 9.0
+      - 21.3
+      - 5.4
+    Combined outcome:
+      - 11.1
+      - 24.6
+      - 6.7
+  outcome_rate_unit: "per 100 person-years"

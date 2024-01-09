@@ -27,7 +27,7 @@ def get_model_estimates():
         .rename(columns={0: "Prior Probabilities", "index": "Latent Classes"})
     )
 
-    pdf_outcome_probas = pd.DataFrame(dct_study_config["outcome_probabilities"]).merge(
+    pdf_outcomes = pd.DataFrame(dct_study_config["outcome_rates"]).merge(
         pdf_prior_class_probabilities[["Latent Classes"]],
         left_index=True,
         right_index=True,
@@ -45,7 +45,7 @@ def get_model_estimates():
                 ],
                 axis=1,
             ).set_index("Latent Classes"),
-            "Outcome Probabilities": pdf_outcome_probas.set_index("Latent Classes"),
+            "Outcome Rates": pdf_outcomes.set_index("Latent Classes"),
         },
         axis=1,
     )
@@ -98,7 +98,7 @@ def compute_class_probabilities(existing, observed):
 pdf_study_config = get_model_estimates()
 dct_selected_covariates = {}
 with st.container():
-    st.write(f"Select applicable {dct_study_config['covariate_label']}")
+    st.write(f"Select applicable {dct_study_config['covariate_label'].lower()}")
     covariates = list(
         pdf_study_config["Model Estimates"].columns.difference(["Prior Probabilities"])
     )
@@ -134,17 +134,16 @@ with st.container():
         ]
         col1, col2 = st.columns(2)
         with col1:
-            outcome_probabilities = "\n".join(
+            outcome_rates = "\n".join(
                 [
-                    f"- {idx}: {round(value * 100, 2)} %"
-                    for idx, value in pdf_predicted_class[
-                        "Outcome Probabilities"
-                    ].items()
+                    f"- {idx}: {round(value, 2)}"
+                    for idx, value in pdf_predicted_class["Outcome Rates"].items()
                 ]
             )
             st.markdown(
-                f"""Predicted latent class is {pdf_predicted_class.name} with 
-                outcome probabilities \n{outcome_probabilities}"""
+                f"""Predicted latent class is **{pdf_predicted_class.name}** 
+                with outcome rates ({dct_study_config['outcome_rate_unit']}) 
+                \n{outcome_rates}"""
             )
         with col2:
             st.bokeh_chart(
@@ -164,18 +163,39 @@ with st.container():
             )
 
 st.divider()
-pdf_outcome_probabilities = pdf_study_config["Outcome Probabilities"]
+pdf_covariate_probabilities = pdf_study_config["Model Estimates"].drop(
+    columns=["Prior Probabilities"]
+)
 
 st.bokeh_chart(
     hv.render(
-        pdf_outcome_probabilities.hvplot.barh(
+        pdf_covariate_probabilities.hvplot.barh(
             responsive=True,
             height=800,
             ylabel="Probability",
-            xlabel="Latent Classes, Outcome",
-            title="Probability of outcome, given latent class",
+            xlabel=f"Latent Classes, {dct_study_config['covariate_label']}",
+            title=f"Probability of {dct_study_config['covariate_label']}, "
+            "given latent class",
             sizing_mode="scale_both",
         ).opts(default_tools=["save"]),
+        backend="bokeh",
+    )
+)
+
+st.divider()
+st.bokeh_chart(
+    hv.render(
+        pdf_study_config["Outcome Rates"]
+        .hvplot.barh(
+            responsive=True,
+            height=800,
+            ylabel=f"Outcome rates ({dct_study_config['outcome_rate_unit']})",
+            xlabel=f"Latent Classes, Outcome rates",
+            title=f"Outcome rates ({dct_study_config['outcome_rate_unit']}) "
+            f"for each latent class",
+            sizing_mode="scale_both",
+        )
+        .opts(default_tools=["save"]),
         backend="bokeh",
     )
 )
