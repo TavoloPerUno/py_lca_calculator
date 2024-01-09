@@ -1,11 +1,11 @@
 ---
 Example Study:
   covariate_label: "Covariate type"
-  class_intercepts:
+  prior_probabilities:
     high: 0.3
     medium: 0.4
     low: 0.5
-  covariate_coefficients:
+  covariate_class_probabilities:
     covariate_1:
       - -0.34
       - -0.45
@@ -30,7 +30,7 @@ Example Study:
       - -0.34
       - -0.15
       - 0.6
-  outcome_probabilities:
+  outcome_rates:
     outcome_1:
       - 0.9
       - 0.05
@@ -47,3 +47,4 @@ Example Study:
       - 0.33
       - 0.33
       - 0.33
+  outcome_rate_unit: "per 100 person-years"
