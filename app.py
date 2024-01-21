@@ -18,6 +18,7 @@ with open(Path("static/style.css"), encoding="utf-8") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
+@st.cache_data
 def get_model_estimates():
     """Loads model estimates from config file"""
     pdf_coeff = pd.DataFrame(dct_study_config["covariate_class_probabilities"])
@@ -52,6 +53,7 @@ def get_model_estimates():
     return pdf_weights_and_probabilities
 
 
+@st.cache_data
 def compute_class_probabilities(existing, observed):
     """
     This function will calculate class probabilities for K classes using the
