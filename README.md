@@ -15,6 +15,18 @@ Given a fitted LCA model (prior class probabilities, covariate–class probabili
 - **Covariate probability profiles** for each latent class
 - **Outcome rates** across all classes
 
+### Select comorbidities
+
+![Covariate selection](docs/images/demo_input.png)
+
+### Predicted class and outcome rates
+
+![Prediction results](docs/images/demo_results.png)
+
+### Covariate profiles and outcome rate charts
+
+![Charts](docs/images/demo_charts.png)
+
 ## How It Works
 
 The app implements the standard LCA posterior probability formula:
