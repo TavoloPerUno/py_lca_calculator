@@ -1,10 +1,12 @@
 # LCA Class Membership & Outcome Probability Calculator
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://py-lca-calculator.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://lca-class-probability-calculator.streamlit.app/)
 
-**[Live Demo](https://py-lca-calculator.streamlit.app)**
+**[Live Demo](https://lca-class-probability-calculator.streamlit.app/)**
 
 A Streamlit web app for computing **Latent Class Analysis (LCA)** class membership probabilities and outcome rates based on user-selected covariate values.
+
+The live demo is pre-loaded with model weights from a study on data-driven health status classification of older adults with diabetes ([docs/Diabetes_Latent_Class_Predictions.pdf](docs/Diabetes_Latent_Class_Predictions.pdf)). It classifies patients into three latent classes — Geriatric, Cardiac, and Healthy — based on 19 comorbidities (e.g., depression, congestive heart failure, dementia) and reports predicted outcome rates (microvascular/cardiovascular complications, infection, hypoglycemia, mortality) per 100 person-years.
 
 Given a fitted LCA model (prior class probabilities, covariate–class probability estimates, and outcome rates), this tool lets users interactively select observed covariates and instantly see:
 
