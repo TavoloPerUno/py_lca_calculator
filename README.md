@@ -1,5 +1,9 @@
 # LCA Class Membership & Outcome Probability Calculator
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://py-lca-calculator.streamlit.app)
+
+**[Live Demo](https://py-lca-calculator.streamlit.app)**
+
 A Streamlit web app for computing **Latent Class Analysis (LCA)** class membership probabilities and outcome rates based on user-selected covariate values.
 
 Given a fitted LCA model (prior class probabilities, covariate–class probability estimates, and outcome rates), this tool lets users interactively select observed covariates and instantly see:
