@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "LCA Class Membership & Outcome Probability Calculator"
+authors:
+  - family-names: Murugesan
+    given-names: Manu
+    affiliation: "Research Computing Group, University of Chicago"
+    email: manorathan@uchicago.edu
+repository-code: "https://github.com/TavoloPerUno/py_lca_calculator"
+url: "https://lca-class-probability-calculator.streamlit.app/"
+license: Apache-2.0
+keywords:
+  - latent-class-analysis
+  - bayesian-inference
+  - streamlit
+  - biostatistics
+  - diabetes
+  - clinical-research

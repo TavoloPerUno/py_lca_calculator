@@ -4,9 +4,9 @@ import pathlib
 HERE = pathlib.Path(__file__).parent
 INSTALL_REQUIRES = (HERE / "requirements.txt").read_text().splitlines()
 
-__version__ = "0.0.0"
+__version__ = "1.0.0"
 
-with open('README.rst', 'r') as fh:
+with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setuptools.setup(
@@ -15,7 +15,7 @@ setuptools.setup(
     author='Research Computing Group',
     description='LCA Class Membership & Outcome Probability Calculator',
     long_description=long_description,
-    long_description_content_type='text/x-rst',
+    long_description_content_type='text/markdown',
     packages=setuptools.find_packages(),
     include_package_data=True,
     license_file='LICENSE',
