@@ -1,6 +1,7 @@
 # LCA Class Membership & Outcome Probability Calculator
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://lca-class-probability-calculator.streamlit.app/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19023653.svg)](https://doi.org/10.5281/zenodo.19023653)
 
 **[Live Demo](https://lca-class-probability-calculator.streamlit.app/)**
 
